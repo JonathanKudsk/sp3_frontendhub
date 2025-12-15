@@ -1,0 +1,36 @@
+name: Frontend Sanity Check
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Hent koden
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Installer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      # 3. Installer dependencies (npm ci er hurtigere og mere strict end npm install)
+      - name: Install Dependencies
+        run: npm ci
+
+      # 4. Kør Linter (Tjekker kodekvalitet)
+      # Kræver at du har "lint": "eslint ." i din package.json scripts (standard i Vite)
+      - name: Run Linter
+        run: npm run lint
+
+      # 5. Kør Build (Tjekker om projektet kan samles uden fejl)
+      - name: Try to Build
+        run: npm run build
