@@ -38,9 +38,3 @@ npm run dev
 - **Simpelt layout**: klar header, rolig baggrund, fokus på kort/indhold
 - **Genbrug**: hver side har sin egen JSX‑komponent + CSS Module
 - **Læsbarhed**: ingen unødvendige kommentarer, korte filer, tydelige classnavne
-
-### Mulige forbedringer
-
-- Tilføje rigtige data til Recipes/Ingredients (fx via JSON eller API)
-- Validere loginformular og vise feedback
-- Gøre layoutet 100 % responsivt på helt små mobilskærme
