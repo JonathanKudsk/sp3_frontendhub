@@ -5,7 +5,7 @@ async function handleHttpErrors(res) {
     let errorData;
     try {
       errorData = await res.json();
-    } catch (e) {
+    } catch {
       errorData = { msg: `HTTP ${res.status} Error` };
     }
     return Promise.reject({ status: res.status, message: errorData.msg || errorData.message || `HTTP ${res.status} Error`, fullError: errorData });
