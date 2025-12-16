@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import recipeFacade from "../../apiFacade.js";
+import facade from "../apiFacade.js";
 import RecipeModal from "../components/RecipeModal";
 import styles from "./Recipes.module.css";
 
@@ -17,7 +17,7 @@ export default function Recipes() {
     setError(null);
     try {
       const category = selectedCategory === "All" ? null : selectedCategory;
-      const data = await recipeFacade.getAll(category);
+      const data = await facade.recipeFacade.getAll(category);
       setRecipes(data);
     } catch (err) {
       let errorMessage = "Failed to load recipes. Please try again.";

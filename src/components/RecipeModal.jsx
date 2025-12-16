@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import recipeFacade from "../../apiFacade.js";
+import facade from "../apiFacade.js";
 import IngredientsList from "./IngredientsList";
 import styles from "./RecipeModal.module.css";
 
@@ -13,7 +13,7 @@ export default function RecipeModal({ recipeId, onClose }) {
     setRecipeDetails(null);
     setExpandedIngredients(new Set());
     try {
-      const data = await recipeFacade.getById(recipeId);
+      const data = await facade.recipeFacade.getById(recipeId);
       console.log("Recipe details:", data);
       if (data.ingredients) {
         console.log("First ingredient:", data.ingredients[0]);
