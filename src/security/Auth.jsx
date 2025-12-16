@@ -3,7 +3,7 @@ import facade from "../apiFacade";
 
 const AuthContext = createContext(null);
 
-export const AuthProvider = ({ children }) => {
+export const Auth = ({ children }) => {
   const [user, setUser] = useState({ username: "", roles: [] });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

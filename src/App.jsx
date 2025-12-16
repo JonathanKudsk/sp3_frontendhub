@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { AuthProvider } from "./security/Auth";
+import { Auth } from "./security/Auth";
 import RequireAuth from "./security/ProtectedAuth";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -34,8 +34,8 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <AuthProvider>
+    <Auth>
       <RouterProvider router={router} />
-    </AuthProvider>
+    </Auth>
   );
 }
