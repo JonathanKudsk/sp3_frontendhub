@@ -72,7 +72,7 @@
 }
 
 .recipesScrollContainer {
-  max-height: 550px;
+  max-height: 560px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 0.5rem;
